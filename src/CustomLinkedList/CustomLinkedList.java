@@ -59,7 +59,7 @@ public class CustomLinkedList<T> implements ILinkedList<T>{
       // Liste hat mehr als 1 Wert
         ListElement<T> _durchzähler = Front;
 
-      //Der Wert der entfernt werden soll ist am Anfang der Liste
+      //Der Wert der entfernt werden soll ist am Anfang der Liste. Er muss extra gecheckt werden, da der untere Loop den ersten Wert vernachlässigt
         if(_durchzähler.Value == _valueRemove){
             Front = Front.Next;
 //            return;

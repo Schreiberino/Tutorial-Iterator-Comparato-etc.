@@ -1,4 +1,4 @@
-package CustomSortingMethod;
+package ComparableComparator;
 
 public class Maus {
 

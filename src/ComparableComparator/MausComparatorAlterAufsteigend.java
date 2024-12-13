@@ -1,4 +1,4 @@
-package CustomSortingMethod;
+package ComparableComparator;
 
 import java.util.Comparator;
 

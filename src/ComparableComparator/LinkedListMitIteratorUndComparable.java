@@ -1,8 +1,7 @@
-package CustomSortingMethod;
+package ComparableComparator;
 
 import CustomLinkedList.ILinkedList;
 
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

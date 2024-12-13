@@ -1,5 +1,5 @@
 package Streams;
-import CustomSortingMethod.*;
+import ComparableComparator.*;
 
 
 import java.util.ArrayList;

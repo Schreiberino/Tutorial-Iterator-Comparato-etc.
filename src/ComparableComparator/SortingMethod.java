@@ -1,6 +1,5 @@
-package CustomSortingMethod;
+package ComparableComparator;
 
-import CustomLinkedList.CustomLinkedList;
 import Iterator.LinkedListMitIterator;
 import Iterator.ListElement;
 
