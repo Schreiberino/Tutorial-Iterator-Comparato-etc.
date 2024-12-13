@@ -13,6 +13,7 @@ public class TestSorting {
     public static void main(String[] args) {
 
 
+
         // Teste Sorting mit Comparator
         LinkedListMitIterator<Maus> MäuseUnsortiert = new LinkedListMitIterator<Maus>();
 
@@ -30,7 +31,17 @@ public class TestSorting {
             MäuseSortiertmitMethode.addValue(new Maus(name, alter));
 
         }
-        MäuseSortiertmitMethode = SortingMethod.BubbleSortCustomLinkedListComparator(MäuseSortiertmitMethode, new MausComparatorAlterAufsteigend());
+
+        Comparator<Maus> Customcomparator = (Maus1, Maus2) -> {
+           if( Maus1.Alter < Maus2.Alter )
+           {
+               return -1;
+           }
+           return 1;
+        };
+
+
+        MäuseSortiertmitMethode = SortingMethod.BubbleSortCustomLinkedListComparator(MäuseSortiertmitMethode, Customcomparator);
 
         Iterator<Maus> MäuseUnsortiertIterator = MäuseUnsortiert.iterator();
         Iterator<Maus> MäuseSortiertMitMethodeIterator = MäuseSortiertmitMethode.iterator();
@@ -45,6 +56,7 @@ public class TestSorting {
             System.out.println("---------------------------------");
 
         }
+
 
 
     }

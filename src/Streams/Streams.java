@@ -41,7 +41,8 @@ public class Streams {
             }
         }
 
-        List<Integer> AlterDerMäuseStream = Mäuse2.stream().map(new MapFunktionOhneLambda()).toList();
+        List<Integer> AlterDerMäuseStream = Mäuse2.stream().map((Maus) -> Maus.Alter )
+                .toList();
 
         for(int i = 0;i< AlterDerMäuseStream.size();i++){
             System.out.println("Nicht Stream: " + AlterDerMäuse.get(i));

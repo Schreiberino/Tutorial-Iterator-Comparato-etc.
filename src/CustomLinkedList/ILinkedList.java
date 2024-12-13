@@ -3,7 +3,7 @@ package CustomLinkedList;
 public interface ILinkedList<T> {
 
 
-    void removeValue(T _person);
+    void removeValue(T _value);
 
 
 

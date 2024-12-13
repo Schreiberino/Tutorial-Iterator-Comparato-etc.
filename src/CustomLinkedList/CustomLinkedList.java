@@ -47,8 +47,12 @@ public class CustomLinkedList<T> implements ILinkedList<T>{
 
         // Fall: Liste hat genau einen Wert
       if(Front == Back){
-          Front = null;
-          Back = null;
+          if(Front.Value == _valueRemove){
+              Front = null;
+              Back = null;
+              return;
+          }
+
           return;
       }
 
@@ -58,7 +62,7 @@ public class CustomLinkedList<T> implements ILinkedList<T>{
       //Der Wert der entfernt werden soll ist am Anfang der Liste
         if(_durchzähler.Value == _valueRemove){
             Front = Front.Next;
-            return;
+//            return;
         }
 
 
@@ -78,6 +82,7 @@ public class CustomLinkedList<T> implements ILinkedList<T>{
                //Fall: Der value der entfernt werden muss ist das Ende der Liste
                if(_durchzähler.getNext().getNext()==null){
                    Links.Next = null;
+                   Back = Links;
                }
                //Fall: der Wert ist irgendwo in der Liste
                else {

@@ -9,17 +9,16 @@ public class MausComparable implements Comparable<MausComparable> {
         Alter = _alter;
         Name = _name;
 
-
     }
 
 
     @Override
     public int compareTo(MausComparable o) {
         if(o.Alter< Alter){
-            return -1;
+            return 1;
         }
 
 
-        return +1;
+        return -1;
     }
 }
