@@ -5,20 +5,18 @@ import CustomLinkedList.ILinkedList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
+public class LinkedListMitIteratorString<T> implements Iterable<String> {
 
-    public ListElement<T> Front =null;
-    public ListElement<T> Back=null;
+    public ListElement<String> Front =null;
+    public ListElement<String> Back=null;
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<String> iterator() {
         return new CustomIteratorLinkedList();
     }
 
 
 
-
-    @Override
     public void removeValue(T _valueRemove) throws NoSuchElementException {
 
        //Fall: Liste hat keinen Wert
@@ -36,7 +34,7 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
       }
 
       // Liste hat mehr als 1 Wert
-        ListElement<T> _durchzähler = Front;
+        ListElement<String> _durchzähler = Front;
 
       //Der Wert der entfernt werden soll ist am Anfang der Liste
         if(_durchzähler.Value == _valueRemove){
@@ -83,11 +81,10 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
 
     }
 
-    @Override
-    public void addValue(T _value) {
+    public void addValue(String _value) {
         // Fall: Die Liste ist leer
         if(Front ==null){
-            Front = new ListElement<T>(_value,null);
+            Front = new ListElement<String>(_value,null);
             Back = Front;
             return;
         }
@@ -100,14 +97,14 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
 
     }
 
-    @Override
+
     public boolean contains (T _value) {
 
         if(Front == null){
             return false;
         }
 
-        ListElement<T> _durchzähler = Front;
+        ListElement<String> _durchzähler = Front;
         while(_durchzähler!=null){
 
             if(_durchzähler.Value == _value){
@@ -121,7 +118,7 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
     }
 
 
-    @Override
+
     public int size() {
 
         int _size = 0;
@@ -129,7 +126,7 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
             return _size;
         }
 
-        ListElement<T> _durchzähler = Front;
+        ListElement<String> _durchzähler = Front;
         while(_durchzähler!=null){
             _size++;
             _durchzähler = _durchzähler.getNext();
@@ -139,7 +136,7 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
     }
 
 
-    private class CustomIteratorLinkedList implements Iterator<T>{
+    private class CustomIteratorLinkedList implements Iterator<String>{
 
         ListElement Durchzähler;
 
@@ -151,16 +148,22 @@ public class LinkedListMitIterator<T> implements ILinkedList<T>,Iterable<T> {
         @Override
         public boolean hasNext() {
             return Durchzähler != null;
+
+
         }
 
         @Override
-        public T next() {
+        public String next() {
             if (!hasNext()) {
                 throw new NoSuchElementException("Keine weiteren Elemente in der Liste vorhanden!");
             }
 
-            T Returnvalue = (T) Durchzähler.Value;
+            String Returnvalue = (String) Durchzähler.Value;
             Durchzähler = Durchzähler.Next;
+
+            if(Returnvalue.length()>5){
+                return "****";
+            }
             return Returnvalue ;
         }
 

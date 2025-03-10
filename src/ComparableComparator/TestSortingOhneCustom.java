@@ -1,9 +1,6 @@
 package ComparableComparator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class TestSortingOhneCustom {
 
@@ -27,7 +24,7 @@ public class TestSortingOhneCustom {
         System.out.println("****************");
 
 
-
+        Map<String, Integer> Maxi = new HashMap<>();
 
         List<MausComparable> MausComparableList = new ArrayList<MausComparable>();
 
